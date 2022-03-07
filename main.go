@@ -179,7 +179,10 @@ func main() {
 			drawFrame(frame, it)
 		}
 	}).SetSelectedFunc(func(row int, column int) {
-		clipboard.WriteAll(table.GetCell(row, column).Text)
+	  text := table.GetCell(row, column).Text
+		clipboard.WriteAll(text)
+		drawFrame(frame, it)
+		frame.AddText(fmt.Sprintf("Copied to clipboard!: %v", text), false, tview.AlignCenter, tcell.ColorOrange)
 	})
 	if err := app.SetRoot(frame, true).EnableMouse(true).Run(); err != nil {
 		panic(err)
