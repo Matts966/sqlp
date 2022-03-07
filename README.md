@@ -22,6 +22,15 @@ $ echo "SELECT * FROM table" | sqlp
 ## Supported databases
 
 - [x] BigQuery
+  - [ ] Support `CREATE TABLE AS SELECT` statements
 - [ ] Snowflake
 - [ ] PostgreSQL
 - [ ] MySQL
+
+## Loadmap
+
+- [ ] Add loading UI
+- [ ] CI/CD
+- [ ] Editor integrations
+  - [ ] Vim
+  - [ ] Emacs
