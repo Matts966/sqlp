@@ -34,7 +34,8 @@ $ echo "select * from \`bigquery-public-data.samples.gsod\`" | sqlp
 ### Vim
 
 ```vim
-command! -nargs=0 Sqlp tabnew | b# | execute "terminal echo '" . join(getline(1, '$')) . "'" . ' <Bar> sqlp'
+" Use sqlp with current file
+command! -nargs=0 Sqlp tabedit % | terminal sqlp %
 ```
 
 ![github_vim](demo/github_vim.gif)
