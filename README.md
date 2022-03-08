@@ -1,5 +1,15 @@
 # sqlp
 
+## Features
+
+- Load gcloud config automatically
+- TUI with loading spinner
+- Copy elements to clipboard
+- Console editor integrations
+- Support inputs from files, process substitution, and stdin
+
+![gsod](demo/gsod.gif)
+
 sqlp is a Preview pager for SQL (BigQuery).
 
 ## Installation
@@ -14,23 +24,36 @@ go install github.com/Matts966/sqlp@latest
 $ # with file path
 $ sqlp file.sql
 $ # with process substitution
-$ sqlp <(echo "SELECT * FROM table")
+$ sqlp <(echo "select * from \`bigquery-public-data.samples.gsod\`")
 $ # with stdin
-$ echo "SELECT * FROM table" | sqlp
+$ echo "select * from \`bigquery-public-data.samples.gsod\`" | sqlp
 ```
+
+## Editor Integration
+
+### Vim
+
+```vim
+command! -nargs=0 Sqlp tabnew | b# | execute "terminal echo '" . join(getline(1, '$')) . "'" . ' <Bar> sqlp'
+```
+
+![github_vim](demo/github_vim.gif)
+
+### Emacs
+
+Pull Requests are welcome!
 
 ## Supported databases
 
 - [x] BigQuery
   - [ ] Support `CREATE TABLE AS SELECT` statements
+- [ ] Presto
+- [ ] Hive
 - [ ] Snowflake
 - [ ] PostgreSQL
 - [ ] MySQL
 
 ## Loadmap
 
-- [ ] Add loading UI
+- [x] Add loading UI
 - [ ] CI/CD
-- [ ] Editor integrations
-  - [ ] Vim
-  - [ ] Emacs
