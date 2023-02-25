@@ -14,7 +14,7 @@ require (
 	github.com/tj/go-spin v1.1.0
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f
 	golang.org/x/oauth2 v0.0.0-20220223155221-ee480838109b
-	golang.org/x/sys v0.0.0-20220227234510-4e6760a101f9 // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	google.golang.org/api v0.70.0
 	google.golang.org/genproto v0.0.0-20220304144024-325a89244dc8 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
